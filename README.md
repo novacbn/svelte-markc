@@ -1,4 +1,4 @@
-# svelte-mark
+# svelte-markc
 
 ## Description
 
@@ -11,7 +11,7 @@ Wanting to use Markdown to document my other projects instead of straight HTML, 
 ## Caveats
 
 -   Like the the description, very naive Markdown -> Svelte Component transformer. Probably a lot of edge-cases.
--   Unlike normal rehypejs / remarkjs build-chains, `svelte-mark` preserves the case sensitivity of HTML elements in the end result, to support custom Svelte Components. e.g. `<P>...content...</P>` doesn't get lower-cased to `<p>...content...</p>`.
+-   Unlike normal rehypejs / remarkjs build-chains, `svelte-markc` preserves the case sensitivity of HTML elements in the end result, to support custom Svelte Components. e.g. `<P>...content...</P>` doesn't get lower-cased to `<p>...content...</p>`.
 -   This package **ONLY** compiles the Svelte Markdown Component, you still have to run `svelte/preprocess` yourself!
 -   This package **BASICALLY** just converts you Markdown content into proper HTML elements before passing into the Svelte Compiler. It doesn't do anything fancy, like in MDX with inline imports.
 
@@ -22,7 +22,7 @@ Wanting to use Markdown to document my other projects instead of straight HTML, 
 Open your terminal and install via `npm`:
 
 ```sh
-npm install git+https://github.com/novacbn/svelte-mark
+npm install git+https://github.com/novacbn/svelte-markc
 ```
 
 ### Usage
@@ -34,7 +34,7 @@ export function compile_source(source: string, options: CompileOptions): Compile
 To compile a Svelte Markdown Component, simple use `compile_source` like you would with [`compile` from `svelte/compiler`](https://svelte.dev/docs#svelte_compile):
 
 ```javascript
-import {compile_source} from "svelte-mark";
+import {compile_source} from "svelte-markc";
 
 const MARKDOWN_EXAMPLE_SOURCE = `# My Header
 This is **markdown** code!`;
@@ -47,7 +47,7 @@ console.log(results.js.code);
 The options however are slightly different than `compile`, see [`CompileOptions`](#options) below:
 
 ```javascript
-import {compile_source} from "svelte-mark";
+import {compile_source} from "svelte-markc";
 
 const MARKDOWN_EXAMPLE_SOURCE = `# My Header
 This is **markdown** code!`;
@@ -66,7 +66,7 @@ console.log(results.js.code);
 Along with the normal results returned from `compile`, you can also access the parsed frontmatter. See [Utilizing Frontmatter](#utilizing-frontmatter) for more information:
 
 ```javascript
-import {compile_source} from "svelte-mark";
+import {compile_source} from "svelte-markc";
 
 const MARKDOWN_EXAMPLE_SOURCE = `+++
 title = "I am a title!"
@@ -170,7 +170,7 @@ interface CompileOptions {
 
 #### Utilizing Frontmatter
 
-By default, `svelte-mark` supports TOML frontmatter via a `+++...toml markup...+++` header in your Svelte Markdown Component. e.g.
+By default, `svelte-markc` supports TOML frontmatter via a `+++...toml markup...+++` header in your Svelte Markdown Component. e.g.
 
 ```markdown
 +++
@@ -210,7 +210,7 @@ animal = "Doggo"
 So today I was walking down the street when I saw a {FRONTMATTER.animal}
 ```
 
-It is also exported as a `<script context="module"></script>` variable. So you can import it in other scripts, if using `svelte-mark` in a build-chain:
+It is also exported as a `<script context="module"></script>` variable. So you can import it in other scripts, if using `svelte-markc` in a build-chain:
 
 ```javascript
 import MarkdownComponent, {FRONTMATTER} from "./example.md";
@@ -220,7 +220,7 @@ console.log(FRONTMATTER.animal);
 
 #### Utilizing Raw Source
 
-And lastly, you can access the original Markdown source via the same way as frontmatter, if using `svelte-mark` in a build-chain:
+And lastly, you can access the original Markdown source via the same way as frontmatter, if using `svelte-markc` in a build-chain:
 
 ```javascript
 import MarkdownComponent, {SOURCE} from "./example.md";
