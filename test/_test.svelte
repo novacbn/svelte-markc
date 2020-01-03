@@ -1,7 +1,8 @@
 <script context="module">
-    export const sup = "hello";
+    export const thing = "world";
 </script>
 <script>
     import {HorizontalRepl} from "svelte-simple-repl";
 </script>
+<h1>Hello, {thing}!</h1>
 <HorizontalRepl value="{FRONTMATTER.repl.test_script}"></HorizontalRepl>

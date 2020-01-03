@@ -18,11 +18,13 @@ Previously, we counted <b>{count}</b> times!
 +++
 
 <script context="module">
-    export const sup = "hello";
+    export let thing = "world";
 </script>
 
 <script>
     import {HorizontalRepl} from "svelte-simple-repl";
 </script>
+
+# Hello, {thing}!
 
 <HorizontalRepl value={FRONTMATTER.repl.test_script} />

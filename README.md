@@ -116,7 +116,7 @@ interface GraymatterOptions {
 /**
  * Represents the plugin handler pipeline, used by `unified`
  */
-type UnifiedPlugin = () => (ast: AbstractSyntaxTree) => void
+type UnifiedPlugin = [() => (ast: AbstractSyntaxTree) => void | string, Object<string, any>];
 
 
 /**
@@ -220,10 +220,18 @@ console.log(FRONTMATTER.animal);
 
 #### Utilizing Raw Source
 
-And lastly, you can access the original Markdown source via the same way as frontmatter, if using `svelte-markc` in a build-chain:
+Next, you can access the original Markdown source via the same way as frontmatter, if using `svelte-markc` in a build-chain:
 
 ```javascript
 import MarkdownComponent, {SOURCE} from "./example.md";
 
-console.log(SOURCE);
+console.log(SOURCE.markdown);
+```
+
+You can even get the HTML transformed Markdown as-well:
+
+```javascript
+import MarkdownComponent, {SOURCE} from "./example.md";
+
+console.log(SOURCE.html);
 ```
