@@ -9,9 +9,6 @@
         "svelte",
         "svelte-components"
     ],
-    "files": [
-        "index.js"
-    ],
     "author": "novacbn",
     "repository": {
         "type": "git",
