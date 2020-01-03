@@ -1,0 +1,6 @@
+{
+    "title": "Test",
+    "repl": {
+        "test_script": "<script>\n    let count = 0;\n\n    function on_click(event) {\n        event.preventDefault();\n\n        count += 1;\n    }\n\n</script>\n\nPreviously, we counted <b>{count}</b> times!\n<button on:click={on_click}>+1</button>"
+    }
+}

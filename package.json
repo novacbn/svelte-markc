@@ -1,0 +1,41 @@
+{
+    "name": "svelte-markc",
+    "version": "0.0.1",
+    "description": "Simple naive package that utilizes rehypejs / remarkjs to transform Markdown to working compiled Svelte Components (e.g. MDX)",
+    "main": "lib/index.js",
+    "keywords": [
+        "compiler",
+        "markdown",
+        "svelte",
+        "svelte-components"
+    ],
+    "files": [
+        "index.js"
+    ],
+    "author": "novacbn",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/novacbn/svelte-markc"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "scripts": {},
+    "dependencies": {
+        "gray-matter": "^4.0.2",
+        "hast-util-raw": "^5.0.1",
+        "lodash": "^4.17.15",
+        "rehype-format": "^3.0.0",
+        "rehype-stringify": "^6.0.1",
+        "remark-parse": "^7.0.2",
+        "remark-rehype": "^5.0.0",
+        "svelte": "^3.16.5",
+        "toml": "^3.0.0",
+        "unified": "^8.4.2",
+        "unist-util-visit": "^2.0.1"
+    },
+    "devDependencies": {
+        "prettier": "^1.14.3"
+    }
+}
