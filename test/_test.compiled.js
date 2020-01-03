@@ -57,7 +57,7 @@ function create_fragment(ctx) {
 	};
 }
 
-const thing = "world";
+let thing = "world";
 
 class Component extends SvelteComponent {
 	constructor(options) {
@@ -76,4 +76,4 @@ export const FRONTMATTER = {
         "test_script": "<script>\n    let count = 0;\n\n    function on_click(event) {\n        event.preventDefault();\n\n        count += 1;\n    }\n\n</script>\n\nPreviously, we counted <b>{count}</b> times!\n<button on:click={on_click}>+1</button>"
     }
 };
-export const SOURCE = {markdown:"+++\ntitle = \"Test\"\n\n[repl]\n    test_script = \"\"\"<script>\n    let count = 0;\n\n    function on_click(event) {\n        event.preventDefault();\n\n        count += 1;\n    }\n\n</script>\n\nPreviously, we counted <b>{count}</b> times!\n<button on:click={on_click}>+1</button>\"\"\"\n+++\n\n<script context=\"module\">\n    export const thing = \"world\";\n</script>\n\n<script>\n    import {HorizontalRepl} from \"svelte-simple-repl\";\n</script>\n\n# Hello, {thing}!\n\n<HorizontalRepl value={FRONTMATTER.repl.test_script} />\n", html:"<script context=\"module\">\n    export const thing = \"world\";\n</script>\n<script>\n    import {HorizontalRepl} from \"svelte-simple-repl\";\n</script>\n<h1>Hello, {thing}!</h1>\n<HorizontalRepl value=\"{FRONTMATTER.repl.test_script}\"></HorizontalRepl>"};
+export const SOURCE = {markdown:"+++\ntitle = \"Test\"\n\n[repl]\n    test_script = \"\"\"<script>\n    let count = 0;\n\n    function on_click(event) {\n        event.preventDefault();\n\n        count += 1;\n    }\n\n</script>\n\nPreviously, we counted <b>{count}</b> times!\n<button on:click={on_click}>+1</button>\"\"\"\n+++\n\n<script context=\"module\">\n    export let thing = \"world\";\n</script>\n\n<script>\n    import {HorizontalRepl} from \"svelte-simple-repl\";\n</script>\n\n# Hello, {thing}!\n\n<HorizontalRepl value={FRONTMATTER.repl.test_script} />\n", html:"<script context=\"module\">\n    export let thing = \"world\";\n</script>\n<script>\n    import {HorizontalRepl} from \"svelte-simple-repl\";\n</script>\n<h1>Hello, {thing}!</h1>\n<HorizontalRepl value=\"{FRONTMATTER.repl.test_script}\"></HorizontalRepl>"};

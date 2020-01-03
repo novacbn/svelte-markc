@@ -1,5 +1,5 @@
 <script context="module">
-    export const thing = "world";
+    export let thing = "world";
 </script>
 <script>
     import {HorizontalRepl} from "svelte-simple-repl";
