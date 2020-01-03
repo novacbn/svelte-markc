@@ -168,10 +168,6 @@ interface CompileOptions {
 }
 ```
 
-#### Compiling Components
-
-...
-
 #### Utilizing Frontmatter
 
 By default, `svelte-mark` supports TOML frontmatter via a `+++...toml markup...+++` header in your Svelte Markdown Component. e.g.
