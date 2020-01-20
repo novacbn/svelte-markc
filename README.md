@@ -10,10 +10,36 @@ Wanting to use Markdown to document my other projects instead of straight HTML, 
 
 ## Caveats
 
--   Like the the description, very naive Markdown -> Svelte Component transformer. Probably a lot of edge-cases.
--   Unlike normal rehypejs / remarkjs build-chains, `svelte-markc` preserves the case sensitivity of HTML elements in the end result, to support custom Svelte Components. e.g. `<P>...content...</P>` doesn't get lower-cased to `<p>...content...</p>`.
+-   Like the the description, very **NAIVE** Markdown -> Svelte Component transformer. Probably a lot of edge-cases.
+-   Unlike normal rehypejs / remarkjs build-chains, `svelte-markc` **PRESERVES** the case sensitivity of HTML elements in the end result, to support custom Svelte Components. e.g. `<P>...content...</P>` doesn't get lower-cased to `<p>...content...</p>`.
+-   All HTML elements **ARE TREATED** as a block element, not wrapped in paragraph tags _(`<p>`)_.
 -   This package **ONLY** compiles the Svelte Markdown Component, you still have to run `svelte/preprocess` yourself!
 -   This package **BASICALLY** just converts you Markdown content into proper HTML elements before passing into the Svelte Compiler. It doesn't do anything fancy, like in MDX with inline imports.
+-   All inline code texts and code blocks have their left curly brace _`{`_ and right curly brace _`}`_ characters **REPLACED**, with their `&#123;` and `&#125;` HTML entity codes respectively.
+-   Using void tags _(e.g. `<HorizontalRepl />`)_ with imported Svelte Components most of the time malforms the Markdown output.
+-   Svelte block-level directives _(e.g. `{#if}`, `{#await}`)_ currently break the Markdown output most of the time.
+
+## Features
+
+### Code Block Meta
+
+Every Markdown code block has all the text after their language inserted as `data-meta` attribute.
+
+e.g.
+
+````md
+```javascript some other meta text
+console.log("some javascript");
+```
+````
+
+renders as:
+
+```html
+<pre><code class="language-javascript" data-meta="some other meta text">
+console.log("some javascript");
+</code></pre>
+```
 
 ## Developer
 
@@ -22,7 +48,7 @@ Wanting to use Markdown to document my other projects instead of straight HTML, 
 Open your terminal and install via `npm`:
 
 ```sh
-npm install git+https://github.com/novacbn/svelte-markc
+npm install git+https://github.com/novacbn/svelte-markc#0.0.1
 ```
 
 ### Usage

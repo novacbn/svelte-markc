@@ -23,8 +23,22 @@ Previously, we counted <b>{count}</b> times!
 
 <script>
     import {HorizontalRepl} from "svelte-simple-repl";
+
+    const things = ["hello", "hi", "waddup!"];
 </script>
 
 # Hello, {thing}!
 
-<HorizontalRepl value={FRONTMATTER.repl.test_script} />
+<HorizontalRepl value={FRONTMATTER.repl.test_script}></HorizontalRepl>
+
+<h2>sup</h2>
+
+I am also text!
+
+```html but also
+<body>
+    {CONTENT HERE}
+</body>
+```
+
+{@html things.join("<br />")}

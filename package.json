@@ -1,6 +1,6 @@
 {
     "name": "svelte-markc",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Simple naive package that utilizes rehypejs / remarkjs to transform Markdown to working compiled Svelte Components (e.g. MDX)",
     "main": "lib/index.js",
     "keywords": [
