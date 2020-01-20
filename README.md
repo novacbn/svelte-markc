@@ -48,7 +48,7 @@ console.log("some javascript");
 Open your terminal and install via `npm`:
 
 ```sh
-npm install git+https://github.com/novacbn/svelte-markc#0.0.1
+npm install git+https://github.com/novacbn/svelte-markc#0.0.2
 ```
 
 ### Usage
