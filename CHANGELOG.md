@@ -11,6 +11,7 @@
 -   Added `SOURCE_JAVASCRIPT` to module-level exports
 -   Changed export `SOURCE.html` -> `SOURCE_HTML`
 -   Changed export `SOURCE.markdown` -> `SOURCE_MARKDOWN`
+-   Changed `compile_markdown` to return `Promise<{frontmatter: {[key: string]: unknown}, html: string}>`
 -   Updated supported NodeJS engine to `>= 12.0.0`
 
 ## 0.0.3 - 2020/01/23
