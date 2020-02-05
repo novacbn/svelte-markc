@@ -25,7 +25,6 @@
         "acorn-walk": "^7.0.0",
         "astring": "^1.4.3",
         "hast-util-raw": "^5.0.1",
-        "hast-util-to-html": "^7.0.0",
         "js-yaml": "^3.13.1",
         "lodash": "^4.17.15",
         "rehype-stringify": "^6.0.1",

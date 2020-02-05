@@ -12,6 +12,7 @@
 -   Changed export `SOURCE.html` -> `SOURCE_HTML`
 -   Changed export `SOURCE.markdown` -> `SOURCE_MARKDOWN`
 -   Changed `compile_markdown` to return `Promise<{frontmatter: {[key: string]: unknown}, html: string}>`
+-   Changed from [`hast-util-to-html`](https://github.com/syntax-tree/hast-util-to-html) to [`@starptech/prettyhtml-hast-to-html`](https://github.com/Prettyhtml/prettyhtml/tree/master/packages/prettyhtml-hast-to-html) for HAST -> HTML stringifying
 -   Updated supported NodeJS engine to `>= 12.0.0`
 
 ## 0.0.3 - 2020/01/23
