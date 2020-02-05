@@ -1,19 +1,18 @@
 const {readFileSync, writeFileSync} = require("fs");
 
-const {compile_frontmatter, compile_markdown, compile_source, compile_svelte} = require("../lib");
+const {compile_frontmatter, compile_markc, compile_markdown} = require("../lib");
+
+const stringify = (v) => JSON.stringify(v, null, 4);
 
 (async () => {
     const text = readFileSync("./test.md").toString();
 
-    const frontmatter = compile_frontmatter(text);
-    const html = await compile_markdown(frontmatter.markdown);
+    const frontmatter = await compile_frontmatter(text);
+    const html = await compile_markdown(text);
+    const {exports, js} = await compile_markc(text);
 
-    writeFileSync("_test.frontmatter.json", JSON.stringify(frontmatter.frontmatter, null, 4));
+    writeFileSync("_test.frontmatter.json", stringify(frontmatter));
+    writeFileSync("_test.exports.json", stringify(exports));
     writeFileSync("_test.svelte", html);
-
-    const compiled = compile_svelte(html, text, frontmatter.frontmatter);
-    const source_c = await compile_source(text);
-
-    writeFileSync("_test.compiled.js", compiled.js.code);
-    writeFileSync("_test.source_c.js", source_c.js.code);
+    writeFileSync("_test.js", js.code);
 })();
