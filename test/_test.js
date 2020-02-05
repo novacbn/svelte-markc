@@ -1,4 +1,5 @@
-import {SvelteComponent, detach, element, init, insert, noop, safe_not_equal, space} from "svelte/internal";
+"use strict";
+const {SvelteComponent, detach, element, init, insert, noop, safe_not_equal, space} = require("svelte/internal");
 function create_fragment(ctx) {
   let h1;
   let t3;
@@ -62,12 +63,15 @@ class Component extends SvelteComponent {
     init(this, options, null, create_fragment, safe_not_equal, {});
   }
 }
-export default Component;
-export const FRONTMATTER = {
+exports.default = Component;
+const FRONTMATTER = {
   "title": "Test",
   "repl": {
     "test_script": "<script>\n    let count = 0;\n\n    function on_click(event) {\n        event.preventDefault();\n\n        count += 1;\n    }\n\n</script>\n\nPreviously, we counted <b>{count}</b> times!\n<button on:click={on_click}>+1</button>"
   }
 };
-export const SOURCE_MARKDOWN = "+++\ntitle = \"Test\"\n\n[repl]\n    test_script = \"\"\"<script>\n    let count = 0;\n\n    function on_click(event) {\n        event.preventDefault();\n\n        count += 1;\n    }\n\n</script>\n\nPreviously, we counted <b>{count}</b> times!\n<button on:click={on_click}>+1</button>\"\"\"\n+++\n\n<script context=\"module\">\n    export let thing = \"world\";\n</script>\n\n<script>\n    import {HorizontalRepl} from \"svelte-simple-repl\";\n\n    const things = [\"hello\", \"hi\", \"waddup!\"];\n</script>\n\n# Hello, {thing}!\n\n<HorizontalRepl value={FRONTMATTER.repl.test_script}></HorizontalRepl>\n\n<h2>sup</h2>\n\nI am also text!\n\n```html but also\n<body>\n    {CONTENT_HERE}\n</body>\n```\n\n{@html things.join(\"<br />\")}\n";
-export const SOURCE_HTML = "<h1>Hello, {thing}!</h1>\n<p></p>\n<p>I am also text!</p>\n<pre><code class=\"language-html\" data-meta=\"but also\">&#x3C;body>\n    &#x26;#123;CONTENT_HERE&#x26;#125;\n&#x3C;/body>\n</code></pre>\n<p>{@html things.join(\"\")}</p>";
+exports.FRONTMATTER = FRONTMATTER;
+const SOURCE_MARKDOWN = "+++\ntitle = \"Test\"\n\n[repl]\n    test_script = \"\"\"<script>\n    let count = 0;\n\n    function on_click(event) {\n        event.preventDefault();\n\n        count += 1;\n    }\n\n</script>\n\nPreviously, we counted <b>{count}</b> times!\n<button on:click={on_click}>+1</button>\"\"\"\n+++\n\n<script context=\"module\">\n    export let thing = \"world\";\n</script>\n\n<script>\n    import {HorizontalRepl} from \"svelte-simple-repl\";\n\n    const things = [\"hello\", \"hi\", \"waddup!\"];\n</script>\n\n# Hello, {thing}!\n\n<HorizontalRepl value={FRONTMATTER.repl.test_script}></HorizontalRepl>\n\n<h2>sup</h2>\n\nI am also text!\n\n```html but also\n<body>\n    {CONTENT_HERE}\n</body>\n```\n\n{@html things.join(\"<br />\")}\n";
+exports.SOURCE_MARKDOWN = SOURCE_MARKDOWN;
+const SOURCE_HTML = "<h1>Hello, {thing}!</h1>\n<p></p>\n<p>I am also text!</p>\n<pre><code class=\"language-html\" data-meta=\"but also\">&#x3C;body>\n    &#x26;#123;CONTENT_HERE&#x26;#125;\n&#x3C;/body>\n</code></pre>\n<p>{@html things.join(\"\")}</p>";
+exports.SOURCE_HTML = SOURCE_HTML;

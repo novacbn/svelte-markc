@@ -8,7 +8,6 @@
 -   Added `type MarkCResults.frontmatter: {[key: string]: any}` when using `compile_markc` for all the frontmatter outputted by `unified` plugins
 -   Added `Processor.data("javascript_exports"): Map<string, unknown>` for `unified` plugins to output module-level exports during `compile_markc` pipeline
 -   Added `Processor.data("markdown_frontmatter"): Map<string, unknown>` for `unified` plugins to output module-level exports during `compile_markc` pipeline
--   Added `SOURCE_JAVASCRIPT` to module-level exports
 -   Changed export `SOURCE.html` -> `SOURCE_HTML`
 -   Changed export `SOURCE.markdown` -> `SOURCE_MARKDOWN`
 -   Changed `compile_markdown` to return `Promise<{frontmatter: {[key: string]: unknown}, html: string}>`

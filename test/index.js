@@ -9,7 +9,7 @@ const stringify = (v) => JSON.stringify(v, null, 4);
 
     const frontmatter = await compile_frontmatter(text);
     const markdown_results = await compile_markdown(text);
-    const {exports, js} = await compile_markc(text);
+    const {exports, js} = await compile_markc(text, {svelte: {format: "cjs"}});
 
     writeFileSync("_test.frontmatter.json", stringify(frontmatter));
 
