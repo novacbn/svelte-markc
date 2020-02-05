@@ -37,7 +37,7 @@ I am also text!
 
 ```html but also
 <body>
-    {CONTENT_HERE}
+    {...CONTENT HERE...}
 </body>
 ```
 

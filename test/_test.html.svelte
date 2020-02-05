@@ -7,11 +7,11 @@
     const things = ["hello", "hi", "waddup!"];
 </script>
 <h1>Hello, {thing}!</h1>
-<p><HorizontalRepl value="{FRONTMATTER.repl.test_script}"></HorizontalRepl></p>
+<HorizontalRepl value="{FRONTMATTER.repl.test_script}"></HorizontalRepl>
 <h2>sup</h2>
 <p>I am also text!</p>
-<pre><code class="language-html" data-meta="but also">&#x3C;body>
-    &#x26;#123;CONTENT_HERE&#x26;#125;
-&#x3C;/body>
+<pre><code class="language-html" data-meta="but also">&lt;body&gt;
+    &lcub;...CONTENT HERE...&rcub;
+&lt;/body&gt;
 </code></pre>
 <p>{@html things.join("<br>")}</p>
