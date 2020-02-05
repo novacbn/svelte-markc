@@ -4,7 +4,7 @@
 
 ## Description
 
-Simple naive package that utilizes rehypejs / remarkjs to transform Markdown to working compiled Svelte Components (e.g. MDX)
+Simple naive package that utilizes [unifiedjs](https://unifiedjs.com/) to transform Markdown to working compiled Svelte Components (e.g. MDX)
 
 ## Why?
 
