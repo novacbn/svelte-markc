@@ -1,6 +1,6 @@
 # svelte-markc
 
-> NOTE: Current README is for not-published in-development version, see [v0.0.3 README.md](https://github.com/novacbn/svelte-markc/blob/f54703e3f182b800587bb8905a1cb89fa988e5f2/README.md) instead!
+> NOTE: This package is under development, and considered alpha-state. Please be aware there might be future breakage!
 
 ## Description
 
