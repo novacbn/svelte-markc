@@ -16,9 +16,9 @@ Wanting to use Markdown to document my other projects instead of straight HTML, 
 -   **PRESERVED** HTML tag name case sensitivity, e.g. `<P>...content...</P>` does not render as `<p>...content...</p>`.
 -   Every HTML elements **ARE TREATED** as a block element, not wrapped in paragraph tags _(`<p>`)_.
 -   This package **ONLY** compiles the Svelte Markdown Component, you still have to run `svelte/preprocess` yourself!
--   All code blocks / inline code texts have **SPECIAL CHARACTERS** like curly braces `{}` and arrows `<>` replaced.
+-   All code blocks / inline code texts have **SPECIAL CHARACTERS** like curly braces `{}` and arrows `<>` escaped.
 -   Using void tags _(e.g. `<HorizontalRepl />`)_ with imported Svelte Components most of the time malforms the Markdown output.
--   Svelte block-level directives _(e.g. `{#if}`, `{#await}`)_ currently break the Markdown output most of the time.
+-   Svelte block-level directives _(e.g. `{#if}`, `{#await}`)_ currently break the Markdown -> HTML output most of the time.
 
 ## Features
 
