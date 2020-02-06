@@ -1,6 +1,6 @@
 # Changelog
 
-## **(UNRELEASED)** 0.1.0 - 2020/02/05
+## 0.1.0 - 2020/02/05
 
 -   Refactor of codebase for deeper integration into the [`unified`](https://github.com/unifiedjs/unified) ecosystem
 -   Changed `compile_source` -> `compile_markc`
